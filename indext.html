@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur officia obcaecati fuga debitis
+        sapiente et veritatis provident hic molestias? Similique alias quisquam ut ipsa consectetur expedita sint neque
+        fugiat in?
+        .</p>
+    <button onclick="showContent()" id="btn" style="display: none;">See more</button>
+
+
+    <img id="onBulb" src="https://media.geeksforgeeks.org/wp-content/uploads/OFFbulb.jpg" alt="" style="margin-left: 40%;">
+    <img id="offBulb" src="https://media.geeksforgeeks.org/wp-content/uploads/ONbulb.jpg" alt="" style="display: none; margin-left: 40%;">
+    <button onclick="bulb()" id="onBtn">ON</button>
+
+ 
+    <script>
+        //--------------------------------------------Paragraph-----------------------------------------------
+     var text = document.getElementById("para").innerText
+        console.log(text.length);
+        if (text.length > 100) {
+            btn = document.getElementById("btn").style.display = 'block'
+            var copy = text.slice(0, 99)
+             para.innerText = copy
+           
+
+        }
+         function showContent() {
+        var btn = document.getElementById('btn')
+        var para = document.getElementById('para')
+    if (btn.innerText == 'See more') {
+        var para = para.innerText = text
+        btn.innerText = 'See less'
+
+    } else {
+        // var copy = text.slice(0, 99)
+        para.innerText = copy
+        btn.innerText = 'See more'
+    }
+  }
+        //--------------------------------------------Bulb-----------------------------------------------
+
+
+        function bulb() {
+            var onBulb = document.getElementById("onBulb")
+            var offBulb = document.getElementById("offBulb")
+            var onBtn = document.getElementById('onBtn')
+      
+            if (onBtn.innerText == 'ON') {
+              onBulb.style.display = 'none'; 
+              offBulb.style.display = 'inline';
+              onBtn.innerText = "OFF";
+            } else {
+          offBulb.style.display ='none';
+          onBulb.style.display = 'inline';
+          
+          onBtn.innerText = 'ON';
+            }
+        }
+        
+
+    </script> 
+</body>
+</html>
